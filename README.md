@@ -1,4 +1,5 @@
-# 🙈 mizaru - Headlessly capture keyboard input and send it to your email.
+# 🙈 Mizaru
+*Blindly capture keyboard input and send it to your email.*
 
 
 ## Setup:
