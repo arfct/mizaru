@@ -59,16 +59,13 @@ process.on('SIGINT', function() {
   sendEmail();
 });
 
-
-
-
-
 function sendEmail() {
   console.log("Sending email...", inputBuffer)
 
   if (!inputBuffer) return;
-  emailData.subject = inputBuffer.split('\n').shift(); // first line is the subject
-  emailData.text = inputBuffer; // join all lines of text
+  let text = inputBuffer.trim()
+  emailData.subject = text.split('\n').shift(); // first line is the subject
+  emailData.text = text; // join all lines of text
   transporter.sendMail(emailData, (error, info) => {
     if (error) {
       return console.log(error);
