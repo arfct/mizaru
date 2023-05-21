@@ -75,32 +75,3 @@ function sendEmail() {
     clearTimeout(timeoutId);
   });
 }
-
-
-if (0) {
-  const HID = require('node-hid');
-
-  const devices = HID.devices();
-  const keyboard = devices.find((device) => {
-    return device.usagePage === 1 && device.usage === 6;
-  });
-
-  if (keyboard) {
-    console.log(`Vendor ID: ${keyboard.vendorId}`);
-    console.log(`Product ID: ${keyboard.productId}`);
-
-    let device = keyboard;
-  // const CAPS_LOCK_USAGE_ID = 0x39;
-  // const device = new HID.HID(0x05ac, 0x026e);
-  let capsLockOn = false;
-
-  setInterval(() => {
-    capsLockOn = !capsLockOn;
-    device.sendFeatureReport([0, 0, capsLockOn ? 2 : 0, 0, 0, 0, 0, 0]);
-  }, 500);
-
-  } else {
-    console.log('No keyboard found');
-  }
-
-}
