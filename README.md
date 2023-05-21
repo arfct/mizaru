@@ -9,16 +9,30 @@
 - Pre-configure SSH access, and WiFi setup if you can.
 
 ### SSH into the device
-`ssh user@raspberrypi.local`
+```
+ssh user@raspberrypi.local
+```
 
 ### Install git and node
-`sudo apt update`
-`sudo apt install git nodejs npm`
+```
+sudo apt update
+```
+```
+sudo apt install git nodejs npm
+```
 
 ### Clone https://github.com/sub-pixel/mizaru.git
-- `git clone https://github.com/sub-pixel/mizaru.git`
-- Install dependencies: `cd mizaru; npm install`
-- Make sure it works: `node mizaru.js`
+```
+git clone https://github.com/sub-pixel/mizaru.git
+```
+Install dependencies:
+```
+cd mizaru; npm install
+```
+Make sure it works: 
+```
+node mizaru.js
+```
 
 ### Edit config.json
 - Add a gmail and password to `config.js`
