@@ -1,5 +1,4 @@
-# mizaru
-Headless capture to email client.
+# 🙈 mizaru - Headlessly capture keyboard input and send it to your email.
 
 
 ## Setup:
