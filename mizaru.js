@@ -1,8 +1,10 @@
 const nodemailer = require('nodemailer');
+const path = require('path');
 const fs = require('fs');
 
 // Get a password from https://myaccount.google.com/apppasswords and edit config.json
-const configData = fs.readFileSync('config.json');
+const configData = fs.readFileSync(path.join(__dirname, 'config.json'));
+
 const config = JSON.parse(configData);
 
 if (!config.email.length) {
