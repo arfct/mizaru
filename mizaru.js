@@ -37,11 +37,10 @@ let inputBuffer = '';
 let timeoutId;
 
 process.stdin.setEncoding('utf8');
-console.log("Listening for text input. Ctrl + Enter to send.");
-console.log("Using:", config.email)
+console.log("\nMIZARU:\nListening for text input. Control-C to send.");
+console.log("Sending to ", config.email)
 
 process.stdin.on('data', (input) => {
-  console.log("Got input", input)
   clearTimeout(timeoutId);
   inputBuffer += input;
   timeoutId = setTimeout(sendEmail, 10000); // 10 seconds
@@ -60,7 +59,7 @@ process.on('SIGINT', function() {
 });
 
 function sendEmail() {
-  console.log("Sending email...", inputBuffer)
+  console.log("Sending text:\n", inputBuffer)
 
   if (!inputBuffer) return;
   let text = inputBuffer.trim()
