@@ -1,17 +1,34 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
 
-// Get a password from https://myaccount.google.com/apppasswords and set the two environment variables below
+// Get a password from https://myaccount.google.com/apppasswords and edit config.json
+const configData = fs.readFileSync('config.json');
+const config = JSON.parse(configData);
+
+if (!config.email.length) {
+  console.log("Please edit config.json and add your email address")
+  process.exit();
+  // let transporter = nodemailer.createTransport({
+  //   sendmail: true,
+  //   newline: 'unix',
+  //   path: '/usr/sbin/sendmail'
+  // });
+}
+
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.MIZARU_EMAIL,
-    pass: process.env.MIZARU_PASS 
+    user: config.email,
+    pass: config.pass 
   }
 });
 
+// create reusable transporter object using the default SMTP transport
+
+
 const emailData = {
-  from: `"Mizaru" <${process.env.MIZARU_EMAIL}>`,
-  to: process.env.MIZARU_EMAIL,
+  from: `"Mizaru" <${config.email}>`,
+  to: config.email,
 };
 
 let inputBuffer = '';
@@ -19,7 +36,7 @@ let timeoutId;
 
 process.stdin.setEncoding('utf8');
 console.log("Listening for text input. Ctrl + Enter to send.");
-console.log("process.env.MIZARU_EMAIL", process.env.MIZARU_EMAIL)
+console.log("Using:", config.email)
 
 process.stdin.on('data', (input) => {
   console.log("Got input", input)
@@ -40,12 +57,7 @@ process.on('SIGINT', function() {
   sendEmail();
 });
 
-// // create reusable transporter object using the default SMTP transport
-// let transporter = nodemailer.createTransport({
-//   sendmail: true,
-//   newline: 'unix',
-//   path: '/usr/sbin/sendmail'
-// });
+
 
 
 
