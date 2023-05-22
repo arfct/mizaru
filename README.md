@@ -59,9 +59,11 @@ To have your Raspberry Pi automatically login a user on boot, you can modify the
   1.	Open a terminal window on your Raspberry Pi.
   2.	Edit the getty service configuration file by running the command `sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf`
   3.	Add the following lines to the file: 
-    - `[Service]`
-    - `ExecStart=`
-    - `ExecStart=-/sbin/agetty --autologin USERNAME --noclear %I $TERM`
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin USERNAME --noclear %I $TERM
+```
   4. Save the file by pressing Ctrl+X, then Y, then Enter.
   5. Reload the systemd daemon by running the command `sudo systemctl daemon-reload`.
   6. Enable the getty service by running the command `sudo systemctl enable getty@tty1.service`.
