@@ -72,8 +72,7 @@ ExecStart=-/sbin/agetty --autologin USERNAME --noclear %I $TERM
 ### Setup mizaru to auto-start
 
 1.	Open a terminal window on your Raspberry Pi.
-2.	Edit the .bashrc file for the user you want to automatically start the program for by running the command ﻿nano ~/.bashrc.
-3.	Scroll to the bottom of the file and add the command to start the program. For example, if you want to start the ﻿chromium-browser program, you would add the following line:
-chromium-browser
+2.	Edit the .bashrc file for the user you want to automatically start the program for by running the command `nano ~/.bashrc`
+3.	Scroll to the bottom of the file and add the command to start the program `node ~/mizaru/mizaru.js`
 4.	Save the file by pressing Ctrl+X, then Y, then Enter.
 5.	Restart your Raspberry Pi to apply the changes.
