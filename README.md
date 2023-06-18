@@ -22,9 +22,9 @@ sudo apt update
 sudo apt install git nodejs npm
 ```
 
-### Clone https://github.com/sub-pixel/mizaru.git
+### Clone https://github.com/arfct/mizaru.git
 ```
-git clone https://github.com/sub-pixel/mizaru.git
+git clone https://github.com/arfct/mizaru.git
 ```
 Install dependencies:
 ```
