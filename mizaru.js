@@ -47,7 +47,7 @@ process.stdin.on('data', (input) => {
 });
 
 process.stdin.on('keypress', function (ch, key) {
-  console.log('got "keypress"', key.nameee);
+  console.log('got "keypress"', key.name);
   if (key && key.ctrl && key.name == 'enter') { // Ctrl + Enter
     sendEmail();
   }
