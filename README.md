@@ -36,7 +36,7 @@ node mizaru.js
 ```
 
 ### Edit config.json
-- Add a gmail and password to `config.js`
+- Add a gmail and password to `config.json`
 - You can get a password from https://myaccount.google.com/apppasswords if you have 2factor on.
     `test`
     
