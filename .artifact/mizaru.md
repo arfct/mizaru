@@ -4,7 +4,6 @@ date: 2023-05
 category: product
 tags:
   - hardware
-  - security
 links:
   source: https://github.com/arfct/mizaru
 media: []
