@@ -5,7 +5,6 @@ category: product
 tags:
   - hardware
   - security
-  - open-source
 links:
   source: https://github.com/arfct/mizaru
 media: []
