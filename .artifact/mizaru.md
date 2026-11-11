@@ -11,8 +11,8 @@ unconfirmed:
   - date
 ---
 
-Mizaru is a Node.js script that collects keyboard input on a Raspberry Pi and emails it to the Pi's owner. The README sets up a Pi with Raspberry Pi OS Lite to log in and start the script on boot, with a Bluetooth keyboard paired to it. The script keeps the typed text in memory. After ten seconds without input, or on Control-C, it sends the text through a Gmail account to that account's own address. The first line becomes the subject.
+Ten seconds after the last input from the keyboard, Mizaru emails what has been typed. It is a Node.js script for a Raspberry Pi, and the README sets one up with Raspberry Pi OS Lite to log in on boot and start the script, with a Bluetooth keyboard paired to it. The script holds the text in memory until the pause, or until Control-C, then sends it through a Gmail account to that account's own address. The first line becomes the subject.
 
-It is named for Mizaru, the monkey that covers its eyes among the three wise monkeys. The first version included code that toggled Caps Lock on the keyboard through node-hid. That code was removed the same day because it did not work.
+The name is that of the monkey that covers its eyes among the three wise monkeys, and the README's one-line summary begins with the word "Blindly". The first version also carried code to toggle the keyboard's Caps Lock through node-hid. That code was removed about two hours later, in a commit titled "Remove HID stuff, since it doesn't work."
 
 Node.js and nodemailer. 2023.
