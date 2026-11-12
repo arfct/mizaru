@@ -76,3 +76,7 @@ ExecStart=-/sbin/agetty --autologin USERNAME --noclear %I $TERM
 3.	Scroll to the bottom of the file and add the command to start the program `node ~/mizaru/mizaru.js`
 4.	Save the file by pressing Ctrl+X, then Y, then Enter.
 5.	Restart your Raspberry Pi to apply the changes.
+
+## Catalogue
+
+The catalogue entry for this project is in [`.artifact/mizaru.md`](.artifact/mizaru.md).
