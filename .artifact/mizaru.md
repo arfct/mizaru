@@ -2,7 +2,7 @@
 title: Mizaru
 date: 2023-05
 status: retired
-category: product
+category: device
 links:
   source: https://github.com/arfct/mizaru
 media:
